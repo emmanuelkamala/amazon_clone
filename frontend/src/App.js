@@ -1,8 +1,11 @@
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Product from './components/Product';
 import data from './data';
 
 function App() {
   return (
+   <BrowserRouter>
     <div className="grid-container">
     <header className="row">
       <div>
@@ -16,6 +19,8 @@ function App() {
     </header>
 
     <main>
+      <Route path="/product/:id" component={ProductScreen} ></Route>
+      <Route path="/" component={HomeScreen} exact ></Route>
       <div className="row center">
         {
           data.products.map(product => (
@@ -30,6 +35,7 @@ function App() {
       All Rights Reserved
     </footer>
   </div>
+  </BrowserRouter>
   );
 }
 
