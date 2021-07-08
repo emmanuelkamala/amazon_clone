@@ -4,7 +4,7 @@ import Rating from '../components/Rating';
 import data from '../data';
 
 function ProductScreen(props) {
- const product = data.products.find(product => product._id == props.match.params.id)
+ const product = data.products.find(product => product._id === props.match.params.id)
   if (!product){
     return <div>Product not found</div>
   } 
